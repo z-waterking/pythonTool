@@ -25,7 +25,7 @@ def lineChart(x, y, name = "lineChart_tmp"):
     plt.ylim((0.5, 5))
 
     # 5. 更改坐标轴的数字显示
-    plt.yticks([0.5, 3, 5], ['are', 'you', 'kidding?'])
+    plt.yticks([0.5, 3, 5], ['are', 'you', 'OK?'])
 
     # 保存图片
     plt.savefig(open("./target/{}.png".format(name), 'wb'))
