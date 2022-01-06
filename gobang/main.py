@@ -4,9 +4,13 @@
 # @File     :main.py
 import pygame
 
+# 棋子
 _BLACK = 1
 _BLANK = 0
 _WHITE = -1
+
+# 颜色
+
 
 class gobang():
     def __init__(self):
@@ -50,13 +54,17 @@ class gobang():
                     cur_y_i += dir[i][j][1]
                     # 处于界内
                     if 0 <= cur_x_i < self.cell_num and 0 <= cur_y_i < self.cell_num:
-                        # 颜色相同
+                        # 颜色相同,则继续
                         if self.chess_pos[cur_x_i][cur_y_i] == self.turn:
                             count += 1
                             continue
-                        # 相对应的下一个方向
+                        else:
+                            # 停止此次循环，相对应的下一个方向
+                            break
+                    else:
                         break
 
+                # 将当前游标复位
                 cur_x_i = x_i
                 cur_y_i = y_i
 
